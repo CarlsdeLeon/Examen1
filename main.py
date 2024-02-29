@@ -30,7 +30,7 @@ def operar(num): #aqui se realiza la operacion
         tamannio_extra = listaB.tamannio - listaA.tamannio
         for i in range(tamannio_extra):
             actualB = listaB.seleccionar(i)
-            listaC.agregar_elemento(Variable(actualB.cantidad, actualB.grado))
+            listaC.agregar_elemento(Variable(actualB.cantidad * num, actualB.grado)) #ya que es A - B los resultados de 0 - B daran - B
         for i in range(listaA.tamannio):
             actualA = listaA.seleccionar(i)
             actualB = listaB.seleccionar(i + tamannio_extra)
@@ -59,12 +59,12 @@ def main():
                        '3.Evaluar polinomio\n'
                        '4.Cerrar programa\n'
                        '|:')
-        print('\n')
+
         print('A =')
         listaA.mostrar_lista()
         print('B =')
         listaB.mostrar_lista()
-        print('\n')
+
         if select == '1':
             select = input('1.Ingresar en polinomio A\n'
                            '2.Ingresar en polinomio B\n'
